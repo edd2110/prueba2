@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+body{
+	overflow:hidden;
+	}
+.pagina{
+	display:block;
+	height:100px;
+	width:100%;
+	position:absolute;
+	cursor:pointer;
+}
+
+.uno{
+	background-color:#F60;
+	transition:all .3s;
+	
+}
+
+.dos {
+	background-color:#840;
+	left:100%;
+	transition:all .3s;
+}
+
+.desaparece{
+	left:-100%;
+}
+
+.aparece{
+	left:0%;
+}
+
+
+
+</style>
+
+<script>
+
+function desaparecer(){
+	if(document.getElementsByClassName("pagina uno")){
+		document.getElementById("uno").className += " desaparece";
+		document.getElementById("dos").className += " aparece";
+	}
+}
+
+function aparecer(){
+	if(document.getElementsByClassName("pagina dos aparece")){
+		document.getElementById("dos").className = " pagina dos";
+		document.getElementById("uno").className = " pagina uno";
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="pagina uno" id="uno" onClick="desaparecer()">
+<p>Hola</p>
+</div>
+
+<div class="pagina dos" id="dos" onClick="aparecer()">
+<p>
+Cómo estás
+</p>
+</div>
+
+
+</body>
+</html>
